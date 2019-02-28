@@ -1,0 +1,35 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to City App
+  </h1>
+  <p>Author: Shashi Bhushan Ramachandra</p>
+</div>
+<div class="container">
+	<form  >
+		<div class="form-group">
+			<div class="input-group-prepend">
+			    <input type="text" #todo  class="form-control" placeholder="Enter your city name" name="todo" ngModel>
+				<span class="input-group-text" (click)="todoSubmit(todo.value)">
+				<i class="material-icons">Search</i></span>
+			</div>
+		</div>
+	</form>
+</div>
+
+<div style="padding:25px" *ngIf="weatherJson">
+  <h4 >Weather Details of  {{place}}</h4>
+
+  <p style="font-size:50px">{{weatherJson.weather[0].description}}</p>
+  <p><b>Current Temp : </b> {{temp}} F</p>
+  <p><b>Min Temp : </b> {{temp_min}} F</p>
+  <p><b>Max Temp : </b> {{temp_max}} F</p>
+</div>
+<div>
+  
+  <h4 style="padding:25px" *ngIf="wikiJson">
+      <img width="20%" src="{{img_url}}">
+    Wikipedia Description of the {{place}}
+   </h4>
+   <p style="padding:25px"> {{wikiJson}} </p>
+</div>
